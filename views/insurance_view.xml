@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <!--Tree view-->
+    <record id="insurance_tree_view" model="ir.ui.view">
+         <field name="model">insurance.insurance</field>
+        <field name="arch" type="xml">
+            <tree string="Truck Insurances">
+                <field name="certificate_no" string="Certificate no"/>
+                <field name="truck" />
+                <field name="insurer" />
+                <field name="commence_date" />
+                <field name="exp_date" />
+            </tree>
+        </field>
+    </record>
+
+    <!--Form view-->
+    <record id="insurance_view_form" model="ir.ui.view">
+        <field name="name">insurance.insurance.view.form</field>
+        <field name="model">insurance.insurance</field>
+        <field name="arch" type="xml">
+            <form string="Insurances">
+                <sheet>
+                    <group col="2" string="Truck's Insurance informations">
+                        <field name="truck" />
+                        <field name="certificate_no" />
+                        <field name="insurer" />
+                        <field name="commence_date" />
+                        <field name="exp_date" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!--Menu action-->
+    <record id="insurance_menu_action" model="ir.actions.act_window">
+         <field name="name">Truck Insurance</field>
+        <field name="res_model">insurance.insurance</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create"> Create Truck Insurance
+            </p>
+        </field>
+    </record>
+
+    <menuitem
+        id="insurance_menu"
+        name="Truck Insurances"
+        sequence="2"/>
+    <menuitem
+        id="sub_insurance_menu"
+        name="Insurances"
+        action="insurance_menu_action"
+        parent="insurance_menu"
+        sequence="1"/>
+    </data>
+</odoo>
