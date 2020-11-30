@@ -5,13 +5,15 @@
     <record id="insurance_tree_view" model="ir.ui.view">
          <field name="model">insurance.insurance</field>
         <field name="arch" type="xml">
-            <tree string="Truck Insurances">
-                <field name="certificate_no" string="Certificate no"/>
+            <tree string="Truck Income Tax">
+                <field name="supplier_name" />
+                <field name="receipt_no" />
                 <field name="truck" />
-                <field name="insurer" />
                 <field name="commence_date" />
                 <field name="exp_date" />
                 <field name="amount" string="Total Amount"/>
+                <field name="paid" />
+                <field name="paid_by" />
                 <field name="state" />
             </tree>
         </field>
@@ -29,11 +31,14 @@
                     <field name="state" widget="statusbar" statusbar_visible="open,expire,closed"/>
                 </header>
                 <sheet>
-                    <group col="2" string="Truck's Insurance informations">
+                    <group col="2" string="Truck's Income Tax informations">
+                        <field name="supplier_name" />
                         <field name="truck" />
-                        <field name="certificate_no" />
-                        <field name="insurer" />
+                        <field name="licence_no" />
+                        <field name="receipt_no" />
                         <field name="amount" />
+                        <field name="paid" />
+                        <field name="paid_by" />
                         <field name="commence_date" />
                         <field name="exp_date" />
                     </group>
@@ -57,11 +62,11 @@
 
     <menuitem
         id="insurance_menu"
-        name="Truck Insurances"
+        name="Truck Income Tax"
         sequence="2"/>
     <menuitem
         id="sub_insurance_menu"
-        name="Insurances"
+        name="Income Tax"
         action="insurance_menu_action"
         parent="insurance_menu"
         sequence="1"/>
