@@ -11,9 +11,9 @@
                 <field name="truck" />
                 <field name="commence_date" />
                 <field name="exp_date" />
-                <field name="amount" sum="Total" string="Total Amount"/>
                 <field name="paid" />
                 <field name="paid_by" />
+                <field name="amount" sum="Total" string="Total Amount"/>
                 <field name="state" />
             </tree>
         </field>
