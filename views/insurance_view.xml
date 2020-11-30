@@ -11,6 +11,8 @@
                 <field name="insurer" />
                 <field name="commence_date" />
                 <field name="exp_date" />
+                <field name="amount" string="Total Amount"/>
+                <field name="state" />
             </tree>
         </field>
     </record>
@@ -21,11 +23,17 @@
         <field name="model">insurance.insurance</field>
         <field name="arch" type="xml">
             <form string="Insurances">
+                <header>
+                    <button name="button_expire" string="Expired" class="oe_highlight" type="object"/>
+                    <button name="button_closed" string="Closed" class="oe_highlight" type="object"/>
+                    <field name="state" widget="statusbar" statusbar_visible="open,expire,closed"/>
+                </header>
                 <sheet>
                     <group col="2" string="Truck's Insurance informations">
                         <field name="truck" />
                         <field name="certificate_no" />
                         <field name="insurer" />
+                        <field name="amount" />
                         <field name="commence_date" />
                         <field name="exp_date" />
                     </group>
