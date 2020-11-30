@@ -49,7 +49,7 @@
 
     <!--Menu action-->
     <record id="insurance_menu_action" model="ir.actions.act_window">
-         <field name="name">Truck Insurance</field>
+         <field name="name">Truck Income Tax</field>
         <field name="res_model">insurance.insurance</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
