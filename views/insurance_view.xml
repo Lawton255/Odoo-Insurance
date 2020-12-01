@@ -48,7 +48,9 @@
                             <field name="paid_by" />
                             <field name="payment_method" />
                             <field name="payment_reference" />
+                            <field name="image" widget="image" options="{                                 'minWidth': 100,                                 'minHeight': 100,                                 'maxWidth': 800,                                 'maxHeight': 600,                                 'ratio': 1,                                 'plugins':  {                                             'crop': {                                                     'minHeight': 50,                                                     'minWidth': 50,                                                     'maxHeight': 250,                                                     'maxWidth': 250,                                                     'ratio': 1,                                                     }                                             }                                 }"/>
                         </group>
+                       
                     </group>
                 </sheet>
             </form>

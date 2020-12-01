@@ -25,6 +25,7 @@ class insurance(models.Model):
     paid        = fields.Boolean(string="Paid", default=True , required=True)
     payment_method = fields.Selection([('cash', 'Cash'), ('cheque', 'Cheque'), ('mobile_money', 'Mobile Money'),], required=True)
     payment_reference = fields.Char(string='Payment reference no', required=True)
+    image = fields.Binary(string="Payment attachment")
     commence_date  = fields.Date(string='Start Date' , required=True)
     exp_date       = fields.Date(string='Expiry Date' , required=True)
     state = fields.Selection([('open', 'In Progress'), ('expire', 'Expired'),
