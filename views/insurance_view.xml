@@ -16,7 +16,7 @@
                 <field name="payment_method" />
                 <field name="payment_reference" />
                 <field name="state" />
-                <field name="amount" sum="Total" string="Total Amount"/>
+                <field name="amount" sum="Total" string="Total Amount (Tsh)"/>
             </tree>
         </field>
     </record>
