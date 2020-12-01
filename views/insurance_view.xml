@@ -13,8 +13,8 @@
                 <field name="exp_date" />
                 <field name="paid" />
                 <field name="paid_by" />
-                <field name="amount" sum="Total" string="Total Amount"/>
                 <field name="state" />
+                <field name="amount" sum="Total" string="Total Amount"/>
             </tree>
         </field>
     </record>
@@ -24,7 +24,7 @@
         <field name="name">insurance.insurance.view.form</field>
         <field name="model">insurance.insurance</field>
         <field name="arch" type="xml">
-            <form string="Insurances">
+            <form string="Income Tax">
                 <header>
                     <button name="button_expire" string="Expired" class="oe_highlight" type="object"/>
                     <button name="button_closed" string="Closed" class="oe_highlight" type="object"/>
