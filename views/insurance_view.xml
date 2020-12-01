@@ -13,6 +13,8 @@
                 <field name="exp_date" />
                 <field name="paid" />
                 <field name="paid_by" />
+                <field name="payment_method" />
+                <field name="payment_reference" />
                 <field name="state" />
                 <field name="amount" sum="Total" string="Total Amount"/>
             </tree>
@@ -31,16 +33,22 @@
                     <field name="state" widget="statusbar" statusbar_visible="open,expire,closed"/>
                 </header>
                 <sheet>
-                    <group col="2" string="Truck's Income Tax informations">
-                        <field name="supplier_name" />
-                        <field name="truck" />
-                        <field name="licence_no" />
-                        <field name="receipt_no" />
-                        <field name="amount" />
-                        <field name="paid" />
-                        <field name="paid_by" />
-                        <field name="commence_date" />
-                        <field name="exp_date" />
+                    <group col="2">
+                        <group string="Truck's Income Tax informations">
+                            <field name="supplier_name" />
+                            <field name="truck" />
+                            <field name="licence_no" />
+                            <field name="receipt_no" />
+                            <field name="commence_date" />
+                            <field name="exp_date" />
+                        </group>
+                        <group string="Payments Details">
+                            <field name="amount" />
+                            <field name="paid" />
+                            <field name="paid_by" />
+                            <field name="payment_method" />
+                            <field name="payment_reference" />
+                        </group>
                     </group>
                 </sheet>
             </form>
