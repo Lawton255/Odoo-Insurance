@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Insurance",
+    'name': "Income Tax",
 
-    'summary': "Insurance for all Vehicle and their remainders",
+    'summary': "Income Tax for all Vehicle and their remainders",
 
     'description': """
         Long description of module's purpose
