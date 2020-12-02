@@ -25,7 +25,7 @@ class insurance(models.Model):
     paid_by     = fields.Many2one('res.partner', string="Paid by" , required=True)
     paid        = fields.Boolean(string="Paid", default=True , required=True)
     payment_method = fields.Selection([('cash', 'Cash'), ('cheque', 'Cheque'), ('mobile_money', 'Mobile Money'),], required=True)
-    payment_reference = fields.Char(string='Payment reference no', required=True)
+    payment_reference = fields.Char(string='Payment reference', required=True)
     #payment_attach = fields.Many2one('ir.attachment', string='Payment Attachment(File)', ondelete='cascade')
     #payment_attach = fields.Binary(string="Payment attachment(File)")
     image = fields.Binary(string="Payment attachment")
