@@ -15,6 +15,7 @@ class insurance(models.Model):
         for rec in self:
             rec.write({'state': 'closed'})
 
+
     licence_no  = fields.Char(string="Licence no")
     receipt_no  = fields.Char(string="Receipt no", required=True)
     truck          = fields.Many2one('fleet.vehicle', string='Truck hose',required=True)
@@ -25,6 +26,8 @@ class insurance(models.Model):
     paid        = fields.Boolean(string="Paid", default=True , required=True)
     payment_method = fields.Selection([('cash', 'Cash'), ('cheque', 'Cheque'), ('mobile_money', 'Mobile Money'),], required=True)
     payment_reference = fields.Char(string='Payment reference no', required=True)
+    #payment_attach = fields.Many2one('ir.attachment', string='Payment Attachment(File)', ondelete='cascade')
+    #payment_attach = fields.Binary(string="Payment attachment(File)")
     image = fields.Binary(string="Payment attachment")
     commence_date  = fields.Date(string='Start Date' , required=True)
     exp_date       = fields.Date(string='Expiry Date' , required=True)
