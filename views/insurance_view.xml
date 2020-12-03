@@ -7,6 +7,7 @@
         <field name="arch" type="xml">
             <tree string="Truck Income Tax">
                 <field name="supplier_name" />
+                <field name="agent" />
                 <field name="receipt_no" />
                 <field name="truck" />
                 <field name="commence_date" />
@@ -36,6 +37,7 @@
                     <group col="2">
                         <group string="Truck's Income Tax informations">
                             <field name="supplier_name" />
+                            <field name="agent" />
                             <field name="truck" />
                             <field name="licence_no" />
                             <field name="receipt_no" />
