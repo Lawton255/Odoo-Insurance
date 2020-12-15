@@ -9,7 +9,9 @@
                 <field name="supplier_name" />
                 <field name="agent" />
                 <field name="receipt_no" />
-                <field name="truck" />
+                <field name="truck_type" />
+                <field name="truck_hose" />
+                <field name="truck_trailer" />
                 <field name="commence_date" />
                 <field name="exp_date" />
                 <field name="paid" />
@@ -38,7 +40,9 @@
                         <group string="Truck's Income Tax informations">
                             <field name="supplier_name" />
                             <field name="agent" />
-                            <field name="truck" />
+                            <field name="truck_type" />
+                            <field name="truck_hose" />
+                            <field name="truck_trailer" />
                             <field name="licence_no" />
                             <field name="receipt_no" />
                             <field name="commence_date" />
@@ -68,7 +72,7 @@
         <field name="view_mode">tree,form</field>
         <field name="domain">[]</field>
         <field name="help" type="html">
-            <p class="oe_view_nocontent_create"> Create Truck Insurance
+            <p class="oe_view_nocontent_create"> Create Truck Hose and Truck trailer Income tax
             </p>
         </field>
     </record>
@@ -76,7 +80,7 @@
     <menuitem
         id="insurance_menu"
         name="Truck Income Tax"
-        sequence="2"/>
+        sequence="5"/>
     <menuitem
         id="sub_insurance_menu"
         name="Income Tax"

@@ -2,7 +2,7 @@ from odoo import models, fields, api
 
 class insurance(models.Model):
     _name = 'insurance.insurance'
-    _rec_name = 'truck'
+    _rec_name = 'truck_type'
     _order    = 'exp_date asc'
 
     @api.multi
@@ -15,14 +15,21 @@ class insurance(models.Model):
         for rec in self:
             rec.write({'state': 'closed'})
 
-
+    @api.multi
+    def _truck_type(self):
+        if self.truck_type == 'hose':
+            self.truck_type = self.truck_hose
+        else:
+            self.truck_type = self.truck_trailer
     
     supplier_name  = fields.Selection([('insurance', 'Insurance'), ('sumatra', 'Sumatra'), 
     ('c28', 'C28'), ('comesa', 'Comesa'), ('carbon_tax', 'Carbon Tax'), ('permit_tax', 'Permit Tax')], required=True)
     agent = fields.Many2one('tax.agent')
     licence_no  = fields.Char(string="Licence no")
     receipt_no  = fields.Char(string="Receipt no", required=True)
-    truck          = fields.Many2one('fleet.vehicle', string='Truck hose',required=True)
+    truck_type  = fields.Selection([('hose', 'Hose'), ('trailer', 'Trailer'),], required=True)
+    truck_hose      = fields.Many2one('fleet.vehicle', string='Truck hose',required=False)
+    truck_trailer   = fields.Many2one('trailer', string='Truck trailer', required=False)
     amount      = fields.Float(string="Amount", required=True)
     paid_by     = fields.Many2one('res.partner', string="Paid by" , required=True)
     paid        = fields.Boolean(string="Paid", default=True , required=True)
