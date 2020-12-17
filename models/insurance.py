@@ -15,12 +15,12 @@ class insurance(models.Model):
         for rec in self:
             rec.write({'state': 'closed'})
 
-    @api.multi
-    def _truck_type(self):
-        if self.truck_type == 'hose':
-            self.truck_type = self.truck_hose
-        else:
-            self.truck_type = self.truck_trailer
+   # @api.onchange('truck_type')
+   # def _truck_type(self):
+   #     if self.truck_type == 'hose':
+   #         self.truck = self.truck_hose
+   #     else:
+   #         self.truck = self.truck_trailer
     
     supplier_name  = fields.Selection([('insurance', 'Insurance'), ('sumatra', 'Sumatra'), 
     ('c28', 'C28'), ('comesa', 'Comesa'), ('carbon_tax', 'Carbon Tax'), ('permit_tax', 'Permit Tax')], required=True)
@@ -28,6 +28,7 @@ class insurance(models.Model):
     licence_no  = fields.Char(string="Licence no")
     receipt_no  = fields.Char(string="Receipt no", required=True)
     truck_type  = fields.Selection([('hose', 'Hose'), ('trailer', 'Trailer'),], required=True)
+    #truck       = fields.Selection(string="Truck")
     truck_hose      = fields.Many2one('fleet.vehicle', string='Truck hose',required=False)
     truck_trailer   = fields.Many2one('trailer', string='Truck trailer', required=False)
     amount      = fields.Float(string="Amount", required=True)
