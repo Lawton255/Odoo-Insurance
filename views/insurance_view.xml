@@ -5,7 +5,7 @@
     <record id="insurance_tree_view" model="ir.ui.view">
          <field name="model">insurance.insurance</field>
         <field name="arch" type="xml">
-            <tree string="Truck Income Tax" decoration-danger="state=='expire'">
+            <tree string="Truck Income Tax" decoration-danger="state=='expire'" decoration-warning="paid==False" decoration-success="paid==True and state=='closed'">
                 <field name="supplier_name" />
                 <field name="agent" />
                 <field name="receipt_no" />

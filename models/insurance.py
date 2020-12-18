@@ -14,6 +14,14 @@ class insurance(models.Model):
     def button_closed(self):
         for rec in self:
             rec.write({'state': 'closed'})
+    
+    @api.onchange('state' , 'exp_date')
+    def _change_state(self):
+        for rec in self:
+            if rec.exp_date <= fields.datetime.now():
+                rec.state == 'expire'
+            else:
+                rec.state == 'open'
 
    # @api.onchange('truck_type')
    # def _truck_type(self):
