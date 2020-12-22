@@ -19,7 +19,6 @@
                 <field name="paid_by" />
                 <field name="payment_method" />
                 <field name="payment_reference" />
-                <field name="state" />
                 <field name="days_left" />
                 <field name="amount" sum="Total" string="Total Amount (Tsh)"/>
             </tree>
