@@ -5,7 +5,8 @@
     <record id="insurance_tree_view" model="ir.ui.view">
          <field name="model">insurance.insurance</field>
         <field name="arch" type="xml">
-            <tree string="Truck Income Tax" decoration-danger="state=='expire'" decoration-warning="paid==False" decoration-success="paid==True and state=='closed'">
+            <tree string="Truck Income Tax" decoration-danger="days_left&lt;10">
+                <!-- The entity reference for < is &lt; and > is &gt;-->
                 <field name="supplier_name" />
                 <field name="agent" />
                 <field name="receipt_no" />
@@ -19,6 +20,7 @@
                 <field name="payment_method" />
                 <field name="payment_reference" />
                 <field name="state" />
+                <field name="days_left" />
                 <field name="amount" sum="Total" string="Total Amount (Tsh)"/>
             </tree>
         </field>
@@ -47,6 +49,7 @@
                             <field name="receipt_no" />
                             <field name="commence_date" />
                             <field name="exp_date" />
+                            <field name="days_left" />
                         </group>
                         <group string="Payments Details">
                             <field name="amount" />
